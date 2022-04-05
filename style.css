@@ -142,6 +142,7 @@ section {
   border-radius: 13px;
 
   padding: 45px 0;
+  transition: all 1s;
 }
 
 
@@ -377,3 +378,22 @@ color: #000;
 }
 /* End hidden ul  */
 
+
+.sticky{
+  position:sticky;
+  position: fixed;
+  top: 80px;
+  right: 10px;
+  background: blue;
+  height: 200px;
+  background-color: #9e4673;
+}
+.sticky1{
+  position:sticky;
+  position: fixed;
+  top: 300px;
+  right: 10px;
+  background: blue;
+  height: 200px;
+  background-color: #9e4673;
+}
