@@ -5,13 +5,13 @@
 }
 ::-webkit-scrollbar {
   width: 1.1rem;
- }
+}
 
 ::-webkit-scrollbar-track {
   border: 7px solid #232943;
   box-shadow: inset 0 0 2.5px 2px rgba(0, 0, 0, 0.5);
   border-radius: 1rem;
-  }
+}
 
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(90deg, #9e4673, #3d4a59);
@@ -23,40 +23,34 @@
 }
 
 /* for Firefox */
- html {scrollbar-color: #9e4673 #3d4a59;}
+html {
+  scrollbar-color: #9e4673 #3d4a59;
+}
 header {
   margin-bottom: 100px;
 
   background-color: #3d4a59;
   color: white;
   border-radius: 0 0 70px 70px;
-
- 
 }
 
-.dark header{
- 
+.dark header {
   background-color: rgba(255, 131, 131, 0.08);
   border-bottom: 1px solid antiquewhite;
 }
 
-
-.dark header h1{
+.dark header h1 {
   background-color: transparent;
 }
 
-
 .dark {
-  background-color:#443334;
+  background-color: #443334;
   color: #fff;
-
 }
 
-.dark main   h1{
+.dark main h1 {
   background-color: #9e4673;
 }
-
-
 
 header h1 {
   margin-bottom: 23px;
@@ -80,8 +74,6 @@ header h1 {
   /* border-bottom: 2px solid red;
   font-size: 20px; */
 }
- 
-
 
 .mode {
   border-radius: 1rem;
@@ -91,26 +83,18 @@ header h1 {
   border: 1.5px solid #ddd;
   cursor: pointer;
   font-size: 1.2rem;
-   
 }
 
 .dark .mode {
-  box-shadow: 0 0 10px #9e4673 ;
+  box-shadow: 0 0 10px #9e4673;
   background: #9e4673;
 }
-
 
 .mode:hover {
   box-shadow: 0 0 10px #9e4673, 0 0 40px #9e4673, 0 0 80px #9e4673;
   background: #9e4673;
   border: none;
-   
 }
-
-
-
-
-
 
 li {
   list-style-type: none;
@@ -145,15 +129,9 @@ section {
   transition: all 1s;
 }
 
-
-
 .dark section {
   box-shadow: 5px 5px 25px rgb(124, 97, 97);
 }
-
-
-
-
 
 .left-section,
 .right-section {
@@ -180,7 +158,6 @@ section {
   margin: 10px;
   padding: 8px 16px;
   border-radius: 6px;
-
   text-decoration: none;
 }
 
@@ -191,7 +168,6 @@ section {
 .my-img {
   border-radius: 50%;
   width: 150px;
-
   border-right: 2px solid #ff8a00;
   border-left: 2px solid #ff8a00;
   border-bottom: 2px solid #e52e71;
@@ -226,19 +202,14 @@ footer {
   color: #fff;
   padding: 15px;
   text-align: center;
-
   border-top-left-radius: 35px;
   border-top-right-radius: 35px;
   margin-bottom: 0;
 }
 
-
 .dark .design {
   background-color: rgba(255, 131, 131, 0.08);
 }
-
-
-
 
 .follow {
   box-shadow: 0 5px 30px 0 rgb(0 0 0 / 25%);
@@ -253,10 +224,8 @@ footer {
 }
 
 
-
 .dark .follow {
   border-top: 6px solid #ffffff;
-
   box-shadow: 0 7px 93px 0 rgb(255 131 131 / 47%);
   background-color: rgba(255, 131, 131, 0.08);
 }
@@ -267,7 +236,6 @@ footer {
   padding: 4px 10px;
   text-decoration: none;
 }
-
 
 .dark .follow a {
   box-shadow: 0 0 10px #9e4673, 0 0 10px #9e4673, 0 0 0px #9e4673;
@@ -281,22 +249,18 @@ footer {
   color: #fff;
 }
 
-
 .dark .follow a:hover {
   background-color: #fc4364;
 }
 
-
-.mycard{
+.mycard {
   margin-left: auto;
-margin-right: auto;
-
-margin-top: 50px;
-
-border-radius: 5px;
+  margin-right: auto;
+  margin-top: 50px;
+  border-radius: 5px;
 }
 
-.container{
+.container {
   margin-top: 50px;
   background-color: #fff;
   border-radius: 12px;
@@ -304,15 +268,13 @@ border-radius: 5px;
   text-align: center;
   padding: 20px 0;
 }
-.container p{
+.container p {
   font-size: 20px;
 }
-
-.active{
+.active {
   display: block !important;
 }
-
-.bigger-contaier{
+.bigger-contaier {
   background-color: rgb(221, 185, 185);
   position: fixed;
   top: 0;
@@ -321,66 +283,55 @@ border-radius: 5px;
   left: 0;
   display: none;
 }
-
-
-
-
-
-
-.dark .card-body{
-color: #000;
+.dark .card-body {
+  color: #000;
 }
-
-
-.flex-pro{
+.flex-pro {
   display: flex;
-  justify-content: space-between;;
-   flex-wrap: wrap;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-
-
-.dark .please{
+.dark .please {
   color: #000;
 }
 
 /* ---------- L3 Codes ----------  */
 
 /* Generals */
-.hide{
+.hide {
   display: none;
 }
-.show{
+.show {
   display: block;
 }
 
 /* Start hidden ul  */
-.hiddenul{
+.hiddenul {
   position: absolute;
   box-shadow: 0 5px 25px 0 rgba(0 0 0 / 60%);
   padding: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: #232943;
   background-color: white;
-  cursor:pointer;
+  cursor: pointer;
   line-height: 30px;
   text-align: center;
 }
-#changecolor{
+#changecolor {
   margin-top: 8px;
 }
-.hiddenul li{
-  font-size: .9rem;
+.hiddenul li {
+  font-size: 0.9rem;
 }
-.hiddenul li:hover{
+.hiddenul li:hover {
   font-size: 1rem;
   font-weight: 500;
   border-bottom: 1px solid red;
 }
 /* End hidden ul  */
 
-
-.sticky{
-  position:sticky;
+.sticky {
+  position: sticky;
   position: fixed;
   top: 80px;
   right: 10px;
@@ -388,8 +339,8 @@ color: #000;
   height: 200px;
   background-color: #9e4673;
 }
-.sticky1{
-  position:sticky;
+.sticky1 {
+  position: sticky;
   position: fixed;
   top: 300px;
   right: 10px;
