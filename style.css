@@ -348,3 +348,19 @@ footer {
   height: 200px;
   background-color: #9e4673;
 }
+
+
+/* Random Video & Quotes */
+.parentIframe{
+  text-align: center;
+  margin-top: 20px;
+}
+.iframe{
+  border-radius: 25px;
+  animation: LTR 2s 1;
+}
+
+@keyframes LTR{
+  0%    {transform:translate(-100vw,0); }
+  100%  {transform:translate(0,0); }
+}
