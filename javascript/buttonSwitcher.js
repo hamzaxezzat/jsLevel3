@@ -1,7 +1,7 @@
 const container = document.getElementById("container");
 const title = document.getElementById("title");
 
-container.style.border = "5px solid red";
+// container.style.border = "5px solid red";
 
 container.addEventListener("click", (eo) => {
   switch (eo.target.className) {
