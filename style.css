@@ -353,10 +353,13 @@ footer {
     transform: translate(0, 0);
   }
 }
-
+.tlc{
+  text-align: center;
+}
 .videosParent,
 .quotesParent,
-.emojisParent {
+.emojisParent
+{
   text-align: center;
 }
 .btnRandomv,
@@ -368,7 +371,7 @@ footer {
   color: #ffffff;
   display: inline-block;
   font: normal bold 26px/1 "Open Sans", sans-serif;
-  text-align: center;
+  /* text-align: center; */
   margin: 30px;
 }
 
@@ -425,9 +428,9 @@ footer {
 /* ========== Random Hearts ========== */
 .heart {
   position: fixed;
-  top: 0%;
+  top: 0px;
   font-size: 40px;
-  animation: fall 2s 2 linear forwards;
+  animation: fall 1s 1 linear forwards;
 }
 
 @keyframes fall {
@@ -437,8 +440,5 @@ footer {
   100% {
     transform: translateY(100vh);
   }
-}
+} 
 
-/* Button */
-.btnRandomE {
-}
