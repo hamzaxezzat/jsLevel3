@@ -15,6 +15,7 @@
     <script defer src="javascript/main.js"></script>
     <!-- <script defer src="javascript/auto-writing.js"></script> -->
     <script defer src="javascript/randomVideo&Quotes.js"></script>
+    <script defer src="javascript/randomHearts.js"></script>
   </head>
   <body id="body">
     <header class="myheader">
@@ -36,46 +37,47 @@
               <li id="titlebg">Title BG</li>
               <li id="titlecolor">Title Color</li>
               <li id="sectionbg">Section BG</li>
-              <li id="sectionNewbg">Section New BG</li>
-              <li id="stickybg">Sticky BG</li>
-              <li id="sticky1bg">Sticky BG</li>
+              <li id="sectionNewbg">1,2 BG</li>
+              <li id="stickybg">Random Arr</li>
+              <li id="sticky1bg">HEX Decimal</li>
             </ul>
           </li>
         </ul>
       </nav>
     </header>
     <main id="main">
-      <div class="sticky">Random Arr</div>
-      <div class="sticky1">HEX Decimal</div>
+      <section class="colorsh">
+        <div class="sticky">Random Arr</div>
+        <div class="sticky1">HEX Decimal</div>
+        
+        <div class="sectionNew">
+          <h1>1</h1>
+        </div>
+        <div class="sectionNew">
+          <h1>2</h1>
+        </div>
+      </section>
+      
       <section id="sec">
         <h1>أنا مين ؟</h1>
-
         <div class="flex">
           <article class="left-section">
             <h3>هدفى</h3>
-
             <p>
               هو إِثراء المُحتوى العربى بمحتوى تعليمى مُتميز عن طريق<br />
               التعليم القائم على المشاريع
             </p>
-
             <a
               id="you"
               class="youtube"
-              href="https://www.w3schools.com/jsref/obj_event.asp"
-            >
+              href="https://www.w3schools.com/jsref/obj_event.asp">
               youtube
             </a>
-
             <a class="facebook" href=""> facebook </a>
           </article>
-
           <article class="right-section">
             <img class="my-img" src="/img/photo.jpg" alt="" />
-
             <h5>Hamza Ezzat</h5>
-
-            <!-- <p class="para">انا الي ضاع من عُمري سنين</p> -->
           </article>
         </div>
       </section>
@@ -83,12 +85,7 @@
       <section>
         <h1 dir="rtl">الذى يُميز Courses4Arab 😍</h1>
       </section>
-      <div class="sectionNew">
-        <h1>Hello</h1>
-      </div>
-      <div class="sectionNew">
-        <h1>World</h1>
-      </div>
+
       <section class="videosParent">
         <h1>Random Video</h1>
         <div class="parentIframe">
@@ -105,8 +102,9 @@
         </div>
         <button class="btnRandomv">Random Video</button>
       </section>
+
       <section class="quotesParent">
-        <h1>Random Video</h1>
+        <h1>Quotes Video</h1>
         <div class="parentQuotes component">
           <blockquote lang="ar" dir="rtl" class="callout quote DE">
 مسطول شاف هندية على جبينها نقطة حمرا قام قالها يا مدام يا مدام انتبهي عم تسجلي فيديو😂
@@ -116,8 +114,16 @@
         </div>
         <button class="btnRandomq">Random Quote</button>
       </section>
+
       <section id="Emojis">
-        <p> &#129409;</p>
+        <h1>Emojis</h1>
+        <div class="emojisParent">
+          <div class="heart">
+            &#129409;
+          </div>
+          <button class="btnRandomE">Random Quote</button>
+
+        </div>
       </section>
     </main>
 
