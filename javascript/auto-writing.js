@@ -10,7 +10,6 @@ const autoWriting = ()=>{
   let a = "Courses4Arab"
   title.innerText = a.slice(0,counter);
   counter++;
-  console.log(counter);
   if ( counter > a.length) {
     clearInterval(looping);
     // counter = 1;

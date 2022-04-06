@@ -8,14 +8,13 @@
     <title>Change Color</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="animation.css" />
 
     <script defer src="javascript/main.js"></script>
-    <script defer src="javascript/auto-writing.js"></script>
+    <!-- <script defer src="javascript/auto-writing.js"></script> -->
+    <script defer src="javascript/randomVideo&Quotes.js"></script>
   </head>
   <body id="body">
     <header class="myheader">
@@ -46,12 +45,8 @@
       </nav>
     </header>
     <main id="main">
-      <div class="sticky">
-        Random Arr
-      </div>
-      <div class="sticky1">
-        HEX Decimal
-      </div>
+      <div class="sticky">Random Arr</div>
+      <div class="sticky1">HEX Decimal</div>
       <section id="sec">
         <h1>أنا مين ؟</h1>
 
@@ -94,11 +89,35 @@
       <div class="sectionNew">
         <h1>World</h1>
       </div>
-      <section>
+      <section class="videosParent">
         <h1>Random Video</h1>
-        <div class="parentIframe">          
-            <iframe class="iframe" width="560" height="315" src="https://www.youtube.com/embed/oWQ7wVrMdZA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="parentIframe">
+          <iframe
+            class="iframe"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/oWQ7wVrMdZA"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
         </div>
+        <button class="btnRandomv">Random Video</button>
+      </section>
+      <section class="quotesParent">
+        <h1>Random Video</h1>
+        <div class="parentQuotes component">
+          <blockquote lang="ar" dir="rtl" class="callout quote DE">
+مسطول شاف هندية على جبينها نقطة حمرا قام قالها يا مدام يا مدام انتبهي عم تسجلي فيديو😂
+            <br />
+            <cite> - مسطول</cite>
+          </blockquote>
+        </div>
+        <button class="btnRandomq">Random Quote</button>
+      </section>
+      <section id="Emojis">
+        <p> &#129409;</p>
       </section>
     </main>
 

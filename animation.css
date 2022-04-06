@@ -1,0 +1,10 @@
+body{
+  font-size: 50px;
+  animation: fall 1s forwards linear  ;
+}
+
+
+@keyframes fall {
+  0%   {transform: translateY(0);}
+  100% {transform: translateY(100px);} 
+}
