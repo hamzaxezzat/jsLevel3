@@ -431,6 +431,7 @@ footer {
   top: 0px;
   font-size: 40px;
   animation: fall 1s 1 linear forwards;
+  animation-duration: 1s;
 }
 
 @keyframes fall {
