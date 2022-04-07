@@ -7,7 +7,7 @@ container.addEventListener("click", (eo) => {
   switch (eo.target.className) {
     case "btn btn-primary":
       title.innerText = "primary";
-      title.style.marginTop = "50px"
+      title.style.marginTop = "50px";
       break;
 
     case "btn btn-secondary":
@@ -23,7 +23,7 @@ container.addEventListener("click", (eo) => {
       break;
 
     default:
-        title.innerText = "ERROR ";
+      title.innerText = "ERROR ";
       break;
   }
 });

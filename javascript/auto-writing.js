@@ -6,17 +6,15 @@
 
 let counter = 1;
 
-const autoWriting = ()=>{
-  let a = "Courses4Arab"
-  title.innerText = a.slice(0,counter);
+const autoWriting = () => {
+  let a = "Courses4Arab";
+  title.innerText = a.slice(0, counter);
   counter++;
-  if ( counter > a.length) {
+  if (counter > a.length) {
     clearInterval(looping);
     // counter = 1;
-  };
-}
+  }
+};
 // Loop
-const looping = setInterval(autoWriting,300);
+const looping = setInterval(autoWriting, 300);
 // clearInterval(looping);
-
-// Stop
