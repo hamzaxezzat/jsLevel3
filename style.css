@@ -452,3 +452,36 @@ footer {
 }
 
 /** ========== accordion ========== */
+
+.accordionParent .container {
+  width: 60%;
+  margin: auto;
+}
+.accordionParent .QA {
+  margin-bottom: 70px;
+}
+.question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background-color: #3d4a59;
+  color: white;
+  margin: 10px auto;
+  padding: 10px 0px 6px 40px;
+}
+.question h2 {
+  /* padding-top: 5px; */
+}
+.question .plus {
+  padding-right: 40px;
+  font-size: 30px;
+}
+.QA .answer {
+  background-color: #27b4fa;
+  border-bottom: 3px solid #1586c8;
+  padding: 25px;
+  text-align: left;
+  color: white;
+  display: none;
+}
