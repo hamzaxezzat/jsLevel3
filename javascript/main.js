@@ -163,5 +163,3 @@ document.querySelectorAll("h1:not(body > header > h1 )");
 document.querySelectorAll("h1:not(body > header > h1 )");
 // Copy Selector from Inspect Element
 */
-console.log("dsasa");
-console.log(1 + 1);

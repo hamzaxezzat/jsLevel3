@@ -467,21 +467,40 @@ footer {
   height: 40px;
   background-color: #3d4a59;
   color: white;
-  margin: 10px auto;
   padding: 10px 0px 6px 40px;
-}
-.question h2 {
-  /* padding-top: 5px; */
 }
 .question .plus {
   padding-right: 40px;
   font-size: 30px;
+  cursor: pointer;
 }
 .QA .answer {
   background-color: #27b4fa;
   border-bottom: 3px solid #1586c8;
-  padding: 25px;
+  padding: 25px 25px 0px 25px;
   text-align: left;
   color: white;
-  display: none;
+  height: 0;
+  opacity: 0;
+  transition: all 0.5s;
+}
+.QA .activeAnswer {
+  /* height: auto; // OR We can do it from JS*/
+  opacity: 1;
+}
+
+/** ========== HTML accordion ========== */
+
+details {
+  width: 60%;
+  margin: 50px auto;
+  font-size: 20px;
+}
+details p {
+  margin-top: 10px;
+  font-style: 16px;
+  background-color: #039be5;
+  padding: 20px;
+  border-radius: 20px;
+  border-top-left-radius: 0px;
 }
