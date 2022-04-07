@@ -1,3 +1,12 @@
+/* Comment */
+/* 
+* Important Information
+! Deprecated method, do not use
+? Should this method be exposed in the public AP?
+TODO:
+@param
+// Ignore it
+*/
 * {
   margin: 0;
 
@@ -353,13 +362,12 @@ footer {
     transform: translate(0, 0);
   }
 }
-.tlc{
+.tlc {
   text-align: center;
 }
 .videosParent,
 .quotesParent,
-.emojisParent
-{
+.emojisParent {
   text-align: center;
 }
 .btnRandomv,
@@ -441,5 +449,6 @@ footer {
   100% {
     transform: translateY(100vh);
   }
-} 
+}
 
+/** ========== accordion ========== */
