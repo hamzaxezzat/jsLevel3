@@ -505,3 +505,28 @@ details p {
   border-top-left-radius: 0px;
   color: white;
 }
+
+/** ========== Digital Clock ========== */
+
+.clock {
+  width: 250px;
+  background-color: #039ae5d5;
+  padding: 30px;
+  text-align: center;
+  margin: 35px auto;
+  color: white;
+  border-radius: 5px;
+  /* line-height: 30px; */
+}
+.clock:hover {
+  box-shadow: 5px 5px 17px #039be5;
+  background-color: #039be5;
+}
+.date {
+  font-size: 1.2em;
+}
+.time {
+  font-size: 2em;
+  font-weight: 600;
+  margin-top: 10px;
+}
