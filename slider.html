@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Slide Show</title>
     <link rel="stylesheet" href="style.css" />
-    <script defer src="javascript/main.js"></script>
-    <script defer src="javascript/2-changeColor.js"></script>
+    <!-- <script defer src="javascript/main.js"></script> -->
+    <!-- <script defer src="javascript/2-changeColor.js"></script> -->
+    <script defer src="javascript/8-slider.js"></script>
   </head>
   <body id="body">
     <header class="myheader">
@@ -43,24 +44,19 @@
         <div class="parentSlideshow">
           <h1>8- Slideshow</h1>
           <div class="slideImgs">
-            <img src="img/slider/1.png" alt="Slide1" />
-            <img src="img/slider/2.png" alt="Slide1" />
-            <img src="img/slider/3.png" alt="Slide1" />
-            <img src="img/slider/4.png" alt="Slide1" />
-            <img src="img/slider/5.png" alt="Slide1" />
-
-            <div class="slideImgNumber">Slide 1 of 5</div>
+            <div id="slideImg"></div>
+            <div id="slideImgNumber">Slide 1 of 5</div>
           </div>
           <div class="slideController">
             <button id="prev">&lt; Prev</button>
             <div class="slidesNumbers">
-              <button class="slideActive">1</button>
-              <button>2</button>
-              <button>3</button>
-              <button>4</button>
-              <button>5</button>
+              <button class="slideNumbtn slideActive">1</button>
+              <button class="slideNumbtn">2</button>
+              <button class="slideNumbtn">3</button>
+              <button class="slideNumbtn">4</button>
+              <button class="slideNumbtn">5</button>
             </div>
-            <button id="next" class="slideActive">Next &gt;</button>
+            <button id="next">Next &gt;</button>
           </div>
         </div>
       </section>
