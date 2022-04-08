@@ -1,1 +1,69 @@
-slider.html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Slide Show</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="javascript/main.js"></script>
+    <script defer src="javascript/2-changeColor.js"></script>
+  </head>
+  <body id="body">
+    <header class="myheader">
+      <h1 id="title">Courses4Arab</h1>
+
+      <nav>
+        <ul class="parent">
+          <li>
+            <a href="https://courses4arab.com/#available-courses">
+              ALL Courses
+            </a>
+          </li>
+          <li><a href="buttonSwitcher.html"> Button Switcher </a></li>
+          <li id="dark" class="mode">change mode</li>
+          <li id="changecolor">
+            Change Color
+            <ul class="hiddenul" style="display: none">
+              <li id="headerbg">Header BG</li>
+              <li id="titlebg">Title BG</li>
+              <li id="titlecolor">Title Color</li>
+              <li id="sectionbg">Section BG</li>
+              <li id="sectionNewbg">1,2 BG</li>
+              <li id="stickybg">Random Arr</li>
+              <li id="sticky1bg">HEX Decimal</li>
+            </ul>
+          </li>
+          <li><a href="slider.html"> Slider </a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main">
+      <section>
+        <div class="parentSlideshow">
+          <h1>8- Slideshow</h1>
+          <div class="slideImgs">
+            <img src="img/slider/1.png" alt="Slide1" />
+            <img src="img/slider/2.png" alt="Slide1" />
+            <img src="img/slider/3.png" alt="Slide1" />
+            <img src="img/slider/4.png" alt="Slide1" />
+            <img src="img/slider/5.png" alt="Slide1" />
+
+            <div class="slideImgNumber">Slide 1 of 5</div>
+          </div>
+          <div class="slideController">
+            <button id="prev">&lt; Prev</button>
+            <div class="slidesNumbers">
+              <button class="slideActive">1</button>
+              <button>2</button>
+              <button>3</button>
+              <button>4</button>
+              <button>5</button>
+            </div>
+            <button id="next" class="slideActive">Next &gt;</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
