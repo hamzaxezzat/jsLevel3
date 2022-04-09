@@ -599,3 +599,112 @@ details p {
   background-color: gray;
   cursor: not-allowed;
 }
+
+/** ========== 9-Toggle Tabs ========== */
+
+/* Button */
+.button-50 {
+  appearance: button;
+  background-color: #000;
+  background-image: none;
+  border: 1px solid #000;
+  border-radius: 4px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin: 0 5px 10px 0;
+  overflow: visible;
+  padding: 12px 40px;
+  text-align: center;
+  text-transform: none;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  opacity: 0.7;
+  transition: all 0.5s;
+}
+
+.button-50:active {
+  box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button-50 {
+    padding: 12px 50px;
+  }
+}
+/* Toggle Content */
+.toggleButtons {
+  width: 60%;
+  margin: auto;
+  text-align: center;
+  margin: 50px auto;
+}
+
+.toggleContent {
+  width: 500px;
+  margin: 20px auto;
+  line-height: 30px;
+}
+.toggleContent .tContent {
+  text-align: left;
+}
+.tContent h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: #000;
+  color: white;
+  padding: 20px 0;
+  border-radius: 5px;
+  box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
+}
+
+.tContent {
+  opacity: 0;
+  height: 0;
+}
+.activeContent {
+  opacity: 1;
+  height: fit-content;
+  transition: ease-in 0.5s;
+}
+.toggleContent span {
+  text-decoration: underline;
+}
+.o1,
+.button-50:hover {
+  opacity: 1;
+  font-size: 1.2em;
+}
+.toggleContent ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.toggleContent ol li {
+  counter-increment: my-awesome-counter;
+  display: flex;
+  /* width: 50%; */
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+.toggleContent ol li::before {
+  content: "0" counter(my-awesome-counter);
+  font-weight: bold;
+  font-size: 3rem;
+  margin-right: 0.5rem;
+  font-family: "Abril Fatface", serif;
+  line-height: 1;
+}
