@@ -14,7 +14,7 @@
     />
     <link rel="stylesheet" href="style.css" />
 
-    <script defer src="javascript/main.js"></script>
+    <!-- <script defer src="javascript/main.js"></script>
     <script defer src="javascript/buttonSwitcher.js"></script>
     <script defer src="javascript/2-changeColor.js"></script>
     <script defer src="javascript/3-auto-writing.js"></script>
@@ -22,7 +22,8 @@
     <script defer src="javascript/5-randomHearts.js"></script>
     <script defer src="javascript/6-accordion.js"></script>
     <script defer src="javascript/7-digitalClock.js"></script>
-    <script defer src="javascript/8-slider.js"></script>
+    <script defer src="javascript/8-slider.js"></script> -->
+    <script defer src="javascript/10-loginValidation.js"></script>
   </head>
   <body id="body">
     <header class="myheader">
@@ -64,29 +65,31 @@
             <form action="" class="details">
               <div class="formField">
                 <label for="username">Username</label>
-                <input type="username" />
-                <span class="valid"> ✅</span>
-                <p class="">at least 3 character</p>
+                <input id="username" type="username" required />
+                <span class="o0"> ✅</span>
+                <p class="userMessage o0">at least 3 character</p>
               </div>
               <div class="formField">
                 <label for="email">Email</label>
-                <input type="email" />
-                <span class="valid o0">✅</span>
-                <p class="o0">at least 3 character</p>
+                <input id="email" type="email" required />
+                <span class="o0">✅</span>
+                <p class="o0">Enter Valid Email</p>
               </div>
               <div class="formField">
                 <label for="password">Password</label>
-                <input type="password" />
-                <span class="valid o0">✅</span>
-                <p class="o0">at least 3 character</p>
+                <input id="password" type="password" required />
+                <span class="o0">✅</span>
+                <p class="o0">
+                  {6,16} at least a number, and at least a special character
+                </p>
               </div>
               <div class="formField">
                 <label for="password">Repeat Password</label>
-                <input type="password" />
-                <span class="valid o0">✅</span>
-                <p class="o0">at least 3 character</p>
+                <input id="repeatPassword" type="password" required />
+                <span class="o0">✅</span>
+                <p class="o0">The Password Not matched!</p>
               </div>
-              <button>Register</button>
+              <button disabled id="regBtn">Register</button>
             </form>
           </div>
         </div>
