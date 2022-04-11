@@ -814,3 +814,43 @@ main .dn {
   transition: all 0.5s;
   border: 1px solid #15d798;
 }
+
+/** ========== 11-prism.js ========== */
+
+.allCode {
+  margin: 20px auto;
+  width: 700px;
+  /* height: 600px !important; */
+}
+.allCode pre {
+  margin: 30px auto;
+  border-radius: 15px;
+  height: 350px !important;
+}
+.copybuttons {
+  display: flex;
+  justify-content: space-between;
+  /* border: 2px solid saddlebrown; */
+}
+.copybuttons button {
+  all: unset;
+  margin: 0 20px;
+  padding: 6px 10px;
+  background: #15d798;
+  border: 1px solid #15d798;
+  border-radius: 5px;
+  color: #fff;
+  transform: translateY(90px);
+  z-index: 5;
+}
+.copybuttons .copyBtn {
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.copybuttons .copyBtn:hover,
+.copybuttons .copyBtn:active {
+  font-size: 1.1em;
+}
+.allCode pre {
+  padding-top: 80px;
+}

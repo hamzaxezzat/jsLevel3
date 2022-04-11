@@ -12,6 +12,7 @@
       href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="prism/prism.css" />
     <link rel="stylesheet" href="style.css" />
 
     <!-- <script defer src="javascript/main.js"></script>
@@ -22,8 +23,10 @@
     <script defer src="javascript/5-randomHearts.js"></script>
     <script defer src="javascript/6-accordion.js"></script>
     <script defer src="javascript/7-digitalClock.js"></script>
-    <script defer src="javascript/8-slider.js"></script> -->
+    <script defer src="javascript/8-slider.js"></script> 
     <script defer src="javascript/10-loginValidation.js"></script>
+    -->
+    <script defer src="prism/prism.js"></script>
   </head>
   <body id="body">
     <header class="myheader">
@@ -55,6 +58,592 @@
       </nav>
     </header>
     <main id="main">
+      <section>
+        <h1>11-Prism.js</h1>
+        <!-- code escape site: https://www.freeformatter.com/html-escape.html -->
+        <article class="allCode">
+          <div class="copybuttons">
+            <button>HTML</button>
+            <button class="copyBtn">Copy</button>
+          </div>
+          <pre><code class="language-html line-numbers codeModifi">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js&quot;&gt;&lt;/script&gt;
+&lt;body&gt;
+  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;h2&gt;Completed TODO's&lt;/h2&gt;
+    &lt;p&gt;&lt;/p&gt;
+    &lt;ul class=&quot;items&quot;&gt;
+      &lt;li&gt;Loading TODOs...&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;form class=&quot;add-items&quot;&gt;
+      &lt;div class=&quot;input-container&quot;&gt;
+        &lt;input type=&quot;text&quot; name=&quot;item&quot; placeholder=&quot;Item Name&quot; required maxlength=&quot;25&quot;&gt;
+        &lt;button type=&quot;submit&quot;&gt;Add Item&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;message&quot;&gt;&lt;/div&gt;
+      &lt;div class=&quot;delete-all-container&quot;&gt;
+        &lt;button type=&quot;button&quot; class=&quot;delete-all&quot;&gt;Delete All&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+          </code></pre>
+        </article>
+        <article class="allCode">
+          <div class="copybuttons">
+            <button>CSS</button>
+            <button class="copyBtn">Copy</button>
+          </div>
+          <pre><code class="language-css line-numbers codeModifi">
+    *,
+    *:before, 
+    *:after {
+      box-sizing: border-box;
+      margin: 0;
+    }
+    
+    html {
+      font-family: Futura, "Trebuchet MS", Arial, sans-serif;
+      font-size: 18px;
+      overflow: hidden;
+    }
+    
+    .wrapper {
+      position: absolute;
+      padding: 20px;
+      max-width: 350px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+    
+    h2 {
+      text-align: center;
+      margin: 0.5rem 0;
+      font-weight: 200;
+    }
+    
+    button {
+      border-radius: 5px;
+      background: #e1341e;
+      color: white;
+      border: none;
+      font-size: 18px;
+    }
+    
+    button:hover {
+      transition: all 1s;
+      transform: scale(1.1);
+    }
+    
+    .items {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      list-style: none;
+    }
+    
+    .items li {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      padding: 10px 0;
+      font-weight: 100;
+      display: flex;
+    }
+    
+    .items label {
+      flex: 1;
+      cursor: pointer;
+    }
+    
+    .items input {
+      display: none;
+    }
+    
+    .items input:checked + label:before {
+        content: attr(data-before);
+    }
+    
+    .add-items {
+      margin-top: 20px;
+    }
+    
+    .add-items button, .add-items input {
+      padding: 10px;
+      outline: 0;
+    }
+    
+    button:hover {
+      cursor: pointer;
+    }
+    
+    .input-container {
+      display: flex;
+    }
+    
+    .input-container button {
+      margin-left: 0.5rem;
+      background-color: #1ECBE1;
+    }
+    
+    .submit-btn {
+      border: 1px solid black;
+    }
+    
+    .submit-btn:hover {
+      border-radius: 5px;
+    }
+    
+    .all-btns {
+      margin: 10px;
+    }
+    
+    .message {
+      padding: 0.5rem 0;
+      color: red;
+    }
+    
+    .delete-all-container {
+      text-align: center;
+    }
+          </code></pre>
+        </article>
+        <article class="allCode">
+          <div class="copybuttons">
+            <button>JS</button>
+            <button class="copyBtn">Copy</button>
+          </div>
+          <pre><code class="language-js line-numbers codeModifi">////////////// sketch /////////////
+
+  var ship;
+  var asteroids = [];
+  var lasers = [];
+
+
+  function setup() {
+    createCanvas(windowWidth, windowHeight);
+    ship = new Ship();
+    for (var i = 0; i &lt; todos.length; i += 1) {
+      asteroids.push(new Asteroid(null, null, todos[i].text));
+    }
+  }
+
+  // always runs
+  function draw() {
+    background(0);
+    for (let i = 0; i &lt; asteroids.length; i += 1) {
+      if (ship.hits(asteroids[i])) {
+        ship.isHit = true;
+        setTimeout(function() {
+          ship.isHit = false;
+        }, 300);
+      }
+      asteroids[i].render();
+      asteroids[i].update();
+      asteroids[i].edges();
+    }
+
+    for (let i = lasers.length - 1; i &gt;= 0; i -= 1) {
+      lasers[i].render();
+      lasers[i].update();
+
+      // collision detection
+      // problem: looping through astroids and adding new ones at same time when they breakup
+      //  solution - loop backwards
+      for (let j = asteroids.length - 1; j &gt;= 0; j -= 1) {
+        if (lasers[i].hits(asteroids[j])) {
+          // make very small pieces disappear
+          if (asteroids[j].r &gt; 12) {
+            var newAsteroids = asteroids[j].breakup();
+            asteroids.push(...newAsteroids);
+          }
+          asteroids.splice(j, 1);
+          lasers.splice(i, 1);
+          break;
+        }
+      }
+
+    }
+
+    ship.render();
+    ship.turn();
+    ship.update();
+    ship.edges();
+  }
+
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+  }
+
+  function keyReleased() {
+    ship.setRotation(0);
+    ship.boosting(false);
+  }
+
+  function keyPressed() {
+    if (keyCode === CONTROL ) {
+      lasers.push(new Laser(ship.pos, ship.heading));
+    } else if (keyCode === RIGHT_ARROW) {
+      ship.setRotation(0.1);
+    } else if (keyCode === LEFT_ARROW) {
+      ship.setRotation(-0.1);
+      } else if (keyCode === UP_ARROW) {
+      ship.boosting(true);
+    }
+  }
+
+
+  ////////////// ship /////////////
+
+  function Ship() {
+    // starting pos vector
+    this.pos = createVector(width / 2, height / 2);
+    this.r = 20;
+
+    this.heading = 0;
+    this.rotation = 0;
+    this.vel = createVector(0,0);
+    this.isBoosting = false;
+    this.isHit = false;
+
+    this.boosting = function(b) {
+      this.isBoosting = b;
+    }
+
+    this.update = function() {
+      if (this.isBoosting) {
+        this.boost();
+      }
+      this.pos.add(this.vel);
+      // dampening - reduce vel by 1% each frame
+      this.vel.mult(0.99);
+
+      if (this.isHit) {
+        this.boost(true);
+        ship.setRotation(random(-0.3, 0.3));
+        ship.turn();
+      }
+
+    }
+
+    this.boost = function(randomMult = false) {
+      // get vector that points in direction of heading
+      var force = p5.Vector.fromAngle(this.heading);
+      // slow down boost
+      force.mult(randomMult ? random(-0.4, 0.4) : 0.1);
+      this.vel.add(force);
+    }
+
+
+    this.hits = function(asteroid) {
+      // dist btn laser and asteroid pos
+      var d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid .pos.y);
+      if (d &lt; this.r + asteroid.r) {
+        // hit
+          return true;
+      } else {
+          return false;
+      }
+  }
+
+    this.render = function() {
+      // push and pop makes sure ship translation and rotation does not affect asteroid or other things on the canvas
+      push(); // save current rotation and translation state
+      // position by vector values
+      translate(this.pos.x, this.pos.y);
+      // create triangle by plotting points
+      // PI / 2 = conversion of 90 deg to radians
+      rotate(this.heading + PI / 2);
+      fill(this.isHit ? 'red' : 0);
+      stroke(255);
+      triangle(-this.r, this.r, this.r, this.r, 0, -this.r);
+      pop() // restore rotation and translation state
+    }
+
+    // allow wrap around if it goes off screen
+    this.edges = function() {
+      if (this.pos.x &gt; width + this.r) {
+        this.pos.x = -this.r;
+      } else if (this.pos.x &lt; -this.r) {
+        this.pos.x = width + this.r;
+      }
+      if (this.pos.y &gt; height + this.r) {
+        this.pos.y = -this.r;
+      } else if (this.pos.y &lt; -this.r) {
+        this.pos.y = height + this.r;
+      }
+    }
+
+    this.setRotation = function(a) {
+      this.rotation = a;
+    }
+
+    this.turn = function() {
+      this.heading += this.rotation;
+    }
+
+  }
+
+  ////////////// asteroid /////////////
+
+  function Asteroid(pos, r, todo) {
+
+      if (pos) {
+          this.pos = pos.copy();
+          this.todo = '';
+      } else {
+          this.pos = createVector(random(width), random(height));
+          this.todo = todo;
+      }
+
+      if (r) {
+          this.r = r * 0.5;
+      } else {
+          this.r = random(15, 50);
+      }
+
+      this.vel = p5.Vector.random2D();
+      if (this.todo === '') {
+          this.vel.mult(random(0.1, 5));
+      }
+      this.total = floor(random(5, 15));
+      this.offset = [];
+      for (let i = 0; i &lt; this.total; i += 1) {
+          this.offset[i] = random(-this.r * 0.5, this.r * 0.5);
+      }
+
+      this.update = function() {
+          this.pos.add(this.vel);
+      }
+
+      this.render = function() {
+          push();
+          stroke(255);
+          noFill();
+          translate(this.pos.x, this.pos.y);
+          beginShape();
+          for (let i = 0; i &lt; this.total; i += 1) {
+              // TWO_PI == 360deg
+              // angle btn 0 and TWO_PI
+              var angle = map(i, 0, this.total, 0, TWO_PI);
+              var r = this.r + this.offset[i];
+              // polar to cartesian transformation
+              var x = r * cos(angle);
+              var y = r * sin(angle);
+              // construct a shape
+              vertex(x, y)
+          }
+          text(todo, 0, 0);
+          endShape(CLOSE);
+          pop();
+      }
+
+      this.breakup = function() {
+          // random number of asteroid pieces
+          const numOfPieces = floor(random(2, 6));
+          var newA = Array(numOfPieces).fill(null);
+          return newA.map(() =&gt; new Asteroid(this.pos, this.r, ''));
+      }
+
+
+      // allow wrap around if it goes  off screen
+      this.edges = function() {
+          if (this.pos.x &gt; width + this.r) {
+          this.pos.x = -this.r;
+          } else if (this.pos.x &lt; -this.r) {
+          this.pos.x = width + this.r;
+          }
+          if (this.pos.y &gt; height + this.r) {
+          this.pos.y = -this.r;
+          } else if (this.pos.y &lt; -this.r) {
+          this.pos.y = height + this.r;
+          }
+      }
+
+  }
+
+
+  ////////////// lazer /////////////
+
+  function Laser(spos, angle) {
+      this.pos = createVector(spos.x, spos.y);
+      this.vel = p5.Vector.fromAngle(angle);
+      this.vel.mult(10);
+
+      this.update = function() {
+          this.pos.add(this.vel);
+      }
+
+      this.render = function() {
+          push();
+          stroke(255);
+          strokeWeight(4);
+          point(this.pos.x, this.pos.y);
+          pop();
+      }
+
+      this.hits = function(asteroid) {
+          const text = asteroid.todo;
+          // dist btn laser and asteroid pos
+          var d = dist(this.pos.x, this.pos.y, asteroid.pos.x, asteroid .pos.y);
+          if (d &lt; asteroid.r) {
+              if (text !== '') {
+                  // pause draw()
+                  noLoop();
+                  // remove todo and update local storage
+                  const newTodos = todos.filter(itm =&gt; itm.text !== text);
+                  todos = newTodos;
+
+                  localStorage.setItem('todos', JSON.stringify(todos));
+
+                  // add item to local storage and list
+                  const item = {
+                      id: Date.now(),
+                      text,
+                      done: true
+                  };
+                  // add to items completed
+                  items.push(item);
+                  // // remove duplicates
+                  var uniq = {};
+                  var itemsFiltered = items.filter(obj =&gt; !uniq[obj.text] &amp;&amp; (uniq[obj.text] = true));
+                  items = itemsFiltered;
+                  if (items.length &gt; 10) {
+                      items.shift();
+                  }
+
+                  populateList(items, itemsList);
+                  localStorage.setItem('items-completed', JSON.stringify(items));
+
+                  // continue draw()
+                  loop();
+              }
+              return true;
+          } else {
+              return false;
+          }
+      }
+  }
+
+  ////////////// TODO list /////////////
+
+  const addItems = document.querySelector('.add-items');
+  const itemsList = document.querySelector('.items');
+  const message = document.querySelector('.message');
+  let items = JSON.parse(localStorage.getItem('items-completed')) || [];
+  let todos = JSON.parse(localStorage.getItem('todos')) || [];
+
+  const deleteAllButton = addItems.querySelector('.delete-all');
+  const uncheckAllButton = addItems.querySelector('.uncheck-all');
+
+  const emojis = ['😀', '😁', '🎉', '✨', '🏆', '🎖', '😅', '😊', '😎','🙂', '🥳', '😺', '😸', '🤙', '👍', '👏', '🙌', '🎈', '🎊', '🎯', '💥', '✔'];
+
+  function randomElementFromArray(arr) {
+    const element = arr[Math.floor(Math.random() * arr.length)];
+    return element;
+  }
+
+  function addItem(e) {
+    e.preventDefault();
+    const text = (this.querySelector('[name=item]')).value;
+
+    // prevent adding duplicates
+    const isTodoPresent = items.some((o) =&gt; o.text === text);
+    const isItemPresent = todos.some((o) =&gt; o.text === text);
+    if (isTodoPresent || isItemPresent) {
+      message.innerText = 'No duplicates allowed';
+      setTimeout(() =&gt; {
+        message.innerText = '';
+      }, 3000);
+      return;
+    };
+
+    const item = {
+      id: Date.now(),
+      text,
+      done: false
+    };
+    todos.push(item);
+    localStorage.setItem('todos', JSON.stringify(todos));
+    // add to p5.js canvas
+    asteroids.push(new Asteroid(null, null, text));
+
+    this.reset();
+  }
+
+  function populateList(items = [], itemsList) {
+    if (items.length === 0) {
+      itemsList.innerHTML = `
+        &lt;li&gt;
+          No completed items
+        &lt;/li&gt;
+        `;
+    } else {
+      itemsList.innerHTML = items.map((item, i) =&gt; {
+        return `
+          &lt;li&gt;
+            &lt;input type=&quot;checkbox&quot; data-index=${i} id=&quot;item${i}&quot; ${item.done ? 'checked' : ''}  /&gt;
+            &lt;label for=&quot;item${i}&quot; data-before=&quot;${randomElementFromArray(emojis)}&quot;&gt;${item.text}&lt;/label&gt;
+            &lt;button
+              type=&quot;button&quot;
+              aria-label=&quot;Remove ${item.name}&quot;
+              value=&quot;${item.id}&quot;&gt;
+              &amp;times;
+            &lt;/button&gt;
+          &lt;/li&gt;
+        `;
+      }).join('');
+    }
+  }
+
+  function toggleDoneOrDelete(e) {
+
+    if (e.target.matches('button')) {
+      const id = parseInt(e.target.value);
+      return deleteItem(id);
+    }
+    if (!e.target.matches('input')) return; // skip this unless it's an input
+    const el = e.target;
+    const index = el.dataset.index;
+    // get text
+    const text = items[index].text;
+    // remove item from items
+    const newItems = items.filter(itm =&gt; itm.text !== text);
+    items = newItems;
+    localStorage.setItem('items-completed', JSON.stringify(items));
+    populateList(items, itemsList);
+
+    // add removed item back to todos
+    const newTodo = {
+      text,
+      done: false
+    };
+    const newTodos = [...todos, newTodo];
+    todos = newTodos;
+    localStorage.setItem('todos', JSON.stringify(todos));
+    // add to p5.js canvas
+    asteroids.push(new Asteroid(null, null, text));
+  }
+
+  function deleteItem(id) {
+    // update state and display updated list
+    items = items.filter(item =&gt; item.id !== id);
+    localStorage.setItem('items-completed', JSON.stringify(items));
+    populateList(items, itemsList);
+  }
+
+  function deleteAll() {
+    items = [];
+    localStorage.setItem('items-completed', JSON.stringify(items));
+    populateList(items, itemsList);
+  }
+
+  addItems.addEventListener('submit', addItem);
+  itemsList.addEventListener('click', toggleDoneOrDelete);
+  deleteAllButton.addEventListener('click', deleteAll);
+
+  populateList(items, itemsList);
+          </code></pre>
+        </article>
+      </section>
       <section>
         <h1>10-Login Validation</h1>
         <button id="register" class="button-50">Register</button>
