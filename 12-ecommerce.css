@@ -1,0 +1,13 @@
+.allCards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card-img-top {
+  width: 80%;
+  margin: 15px auto;
+}
+.cardAndPrice {
+  display: flex;
+  justify-content: space-between;
+}
